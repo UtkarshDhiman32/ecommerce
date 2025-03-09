@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
   "start": "node index.js",
-  "build": "echo 'Build step not required'",
-  "vercel-build": "npm install"
+  "build": "echo 'Build step not required'"
 },
   "author": "",
   "license": "ISC",

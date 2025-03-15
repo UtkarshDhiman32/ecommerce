@@ -25,7 +25,7 @@ let product= productDetails;
 let formData= new FormData();
 formData.append('product',image); 
 
-await fetch ('http://localhost:4000/upload',{
+await fetch ('https://ecommerce-mkq5.onrender.com/',{
   method: 'POST',
 headers:{
   Accept:'application/json',
@@ -35,7 +35,7 @@ headers:{
 if(responseData.success){
   product.image=responseData.image_url;
   console.log(product); 
-  await fetch('http://localhost:4000/addproduct',{
+  await fetch('https://ecommerce-mkq5.onrender.com/',{
     method: 'POST',
     headers:{
       Accept:'application/json',

@@ -1,4 +1,4 @@
-const port =  process.env.PORT || 4000;
+const port = 4000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -11,9 +11,6 @@ const { error, log } = require("console");
 
 app.use(express.json());
 app.use(cors());
-
-
-
 
 //database connection
 mongoose.connect(

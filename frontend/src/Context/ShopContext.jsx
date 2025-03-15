@@ -12,11 +12,11 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(()=>{
-fetch('http://localhost:4000/allproducts')
+fetch('https://ecommerce-mkq5.onrender.com/')
 .then((response)=>response.json())
 .then((data)=>setAll_product(data))
 if(localStorage.getItem('auth-token')){
-  fetch('http://localhost:4000/getcart',{
+  fetch('https://ecommerce-mkq5.onrender.com/',{
     method: 'POST',
     headers: {
       Accept:'application/form-data',
@@ -33,7 +33,7 @@ if(localStorage.getItem('auth-token')){
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     if(localStorage.getItem('auth-token')){
-      fetch('http://localhost:4000/addtocart',{
+      fetch('https://ecommerce-mkq5.onrender.com/',{
         method: 'POST',
         headers: {
           Accept:'application/form-data',
@@ -50,7 +50,7 @@ if(localStorage.getItem('auth-token')){
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if(localStorage.getItem('auth-token')){
-      fetch('http://localhost:4000/removefromcart',{
+      fetch('https://ecommerce-mkq5.onrender.com/',{
         method: 'POST',
         headers: {
           Accept:'application/form-data',

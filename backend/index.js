@@ -6,7 +6,10 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require('cors');
-app.use(cors({ origin: 'https://ecommerce-frontend-sd98.onrender.com' }));
+app.use(cors({ origin: 'https://ecommerce-frontend-sd98.onrender.com',
+  methods: 'GET,POST',
+  alloweHeaders: ['Content-Type', 'Authorization']
+ }));
 const { error, log } = require("console");
 
 app.use(express.json());

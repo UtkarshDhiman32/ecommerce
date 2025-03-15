@@ -3,9 +3,8 @@ import Item from '../Item/Item'
 import { useState, useEffect } from 'react'
 function NewCollections() {
   const [new_collection,setNew_collection]= useState([]);
-
   useEffect(()=>{
-fetch('https://ecommerce-mkq5.onrender.com/')
+fetch("https://ecommerce-mkq5.onrender.com/newcollections")
 .then((response)=>response.json())
 .then((data)=>setNew_collection(data));
 },[])

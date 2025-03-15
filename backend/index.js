@@ -40,10 +40,10 @@ app.use("/images", express.static("upload/images"));
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
-    image_url: `http://localhost:${port}/images/${req.file.filename}`,
+    image_url: `https://ecommerce-mkq5.onrender.com/:${port}/images/${req.file.filename}`
+,
   });
 });
-
 // Schema for creating products
 const Product = mongoose.model("product", {
   id: {

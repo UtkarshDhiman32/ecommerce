@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require('cors');
+
+
 app.use((req, res, next) => {
   // Set the Access-Control-Allow-Origin header to your frontend's origin.
   res.setHeader('Access-Control-Allow-Origin', 'https://ecommerce-frontend-sd98.onrender.com');
@@ -13,15 +15,18 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Example
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Example
   next();
-});const { error, log } = require("console");
+});
+const { error, log } = require("console");
 
 app.use(express.json());
 app.use(cors());
 
 //database connection
-mongoose.connect(
-  "mongodb+srv://utkarshdhiman:utkarsh123@cluster0.ldsba.mongodb.net/E-commerce"
-);
+mongoose.connect("mongodb+srv://utkarshdhiman:utkarsh123@cluster0.ldsba.mongodb.net/E-commerce", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  tls: true
+});
 
 //api connection
 app.get("/", (req, res) => {
